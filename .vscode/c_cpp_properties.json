@@ -3,14 +3,15 @@
         {
             "name": "null",
             "includePath": [
-                "${workspaceFolder}",
-                "${workspaceFolder}/build/googletest-src/googletest/include"
+                "/home/mats/code/piece_table"
             ],
             "defines": [],
             "browse": {
                 "path": [
                     "/usr/include",
-                    "/usr/local/include"
+                    "/usr/local/include",
+                    "/home/mats/code/piece_table",
+                    "/home/mats/code/piece_table/build/googletest-src/googletest/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
