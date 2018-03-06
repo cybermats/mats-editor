@@ -11,22 +11,25 @@
             "type": "shell",
             "command": "cmake",
             "args": [
-                "-G", "'Unix Makefiles'",
+                "-G",
+                "'Unix Makefiles'",
                 "-DCMAKE_BUILD_TYPE=Debug",
                 ".."
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "make",
             "type": "shell",
             "command": "make",
             "args": [
-                "-j", "8"
+                "-j",
+                "8"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
+            }
         }
     ]
 }

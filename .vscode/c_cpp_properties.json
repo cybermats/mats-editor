@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "null",
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/build/googletest-src/googletest/include"
+            ],
+            "defines": [],
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 3
+}
