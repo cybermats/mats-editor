@@ -24,5 +24,5 @@ private:
 
   const std::string _original;
   std::string _add;
-  std::vector _pieces;
+  std::vector<piece> _pieces;
 };
