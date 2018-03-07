@@ -201,3 +201,47 @@ TEST(TestFunctionality, DeleteThenInsertAfter) {
   EXPECT_EQ(pt.item_at(3), -1);
 }
 
+TEST(TestAdvancedFunctionality, ManyInsertsFromEmpty) {
+  piece_table pt;
+  EXPECT_NO_THROW(pt.insert(0, 'x'));
+  EXPECT_NO_THROW(pt.insert(1, 'y'));
+  EXPECT_NO_THROW(pt.insert(2, 'z'));
+  EXPECT_EQ(pt.item_at(0), 'x');
+  EXPECT_EQ(pt.item_at(1), 'y');
+  EXPECT_EQ(pt.item_at(2), 'z');
+  EXPECT_EQ(pt.item_at(3), -1);
+}
+
+TEST(TestAdvancedFunctionality, ManyInsertsFromSetBefore) {
+  piece_table pt("ab");
+  EXPECT_NO_THROW(pt.insert(0, 'x'));
+  EXPECT_NO_THROW(pt.insert(1, 'y'));
+  EXPECT_EQ(pt.item_at(0), 'x');
+  EXPECT_EQ(pt.item_at(1), 'y');
+  EXPECT_EQ(pt.item_at(2), 'a');
+  EXPECT_EQ(pt.item_at(3), 'b');
+  EXPECT_EQ(pt.item_at(4), -1);
+}
+
+TEST(TestAdvancedFunctionality, ManyInsertsFromSetMiddle) {
+  piece_table pt("ab");
+  EXPECT_NO_THROW(pt.insert(1, 'x'));
+  EXPECT_NO_THROW(pt.insert(2, 'y'));
+  EXPECT_EQ(pt.item_at(0), 'a');
+  EXPECT_EQ(pt.item_at(1), 'x');
+  EXPECT_EQ(pt.item_at(2), 'y');
+  EXPECT_EQ(pt.item_at(3), 'b');
+  EXPECT_EQ(pt.item_at(4), -1);
+}
+
+TEST(TestAdvancedFunctionality, ManyInsertsFromSetAfter) {
+  piece_table pt("ab");
+  EXPECT_NO_THROW(pt.insert(2, 'x'));
+  EXPECT_NO_THROW(pt.insert(3, 'y'));
+  EXPECT_EQ(pt.item_at(0), 'a');
+  EXPECT_EQ(pt.item_at(1), 'b');
+  EXPECT_EQ(pt.item_at(2), 'x');
+  EXPECT_EQ(pt.item_at(3), 'y');
+  EXPECT_EQ(pt.item_at(4), -1);
+}
+
