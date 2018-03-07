@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
+set(CMAKE_CXX_STANDARD 14)
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
     RESULT_VARIABLE result
