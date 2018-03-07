@@ -1,6 +1,6 @@
 #pragma once
+#include <list>
 #include <string>
-#include <vector>
 
 class piece_table {
 public:
@@ -17,6 +17,10 @@ public:
 
 private:
   struct piece {
+    piece() {}
+    piece(bool add, size_t offset, size_t length)
+        : add(add), offset(offset), length(length) {}
+
     bool add;
     size_t offset;
     size_t length;
@@ -24,5 +28,5 @@ private:
 
   const std::string _original;
   std::string _add;
-  std::vector<piece> _pieces;
+  std::list<piece> _pieces;
 };

@@ -2,10 +2,12 @@
 #include <iostream>
 
 int main() {
-  int a = 2;
-  piece_table pt;
+  piece_table pt("ab");
+  pt.erase(1);
 
-  std::cout << "Hello World" << std::endl;
-  std::cout << a << std::endl;
+  piece_table pta("ab");
+  pta.insert(1, 'x');
+  pta.erase(1);
+
   return 0;
 }
