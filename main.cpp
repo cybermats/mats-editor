@@ -2,12 +2,10 @@
 #include <iostream>
 
 int main() {
-  piece_table pt("ab");
-  pt.erase(1);
+  piece_table pt;
+  pt.insert(0, 'a');
+  pt.insert(1, 'a');
 
-  piece_table pta("ab");
-  pta.insert(1, 'x');
-  pta.erase(1);
 
   return 0;
 }
