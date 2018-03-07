@@ -1,8 +1,13 @@
 {
     "C_Cpp.intelliSenseEngine": "Tag Parser",
-    "editor.formatOnType": true,
-    "editor.formatOnSave": true,
+    "editor.autoIndent": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "array": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp",
+        "slist": "cpp"
     }
 }
