@@ -1,4 +1,4 @@
-#include "source/piece_table.h"
+#include "piece_table/piece_table.h"
 #include "gtest/gtest.h"
 #include <iostream>
 

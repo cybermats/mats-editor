@@ -1,4 +1,4 @@
-#include "piece_table.h"
+#include "piece_table/piece_table.h"
 #include <stdexcept>
 #include <vector>
 

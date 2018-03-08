@@ -14,6 +14,6 @@ add_executable("test_${PROJECT_NAME}"
   test/testmain.cpp)
 
 target_link_libraries("test_${PROJECT_NAME}"
-  lib gtest_main)
+"${PROJECT_NAME}" gtest_main)
 
 add_test("test_${PROJECT_NAME}" "test_${PROJECT_NAME}")
