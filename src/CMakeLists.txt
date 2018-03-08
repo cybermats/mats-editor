@@ -28,16 +28,10 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
 project(piece_table VERSION 0.0.0)
 
 include(CTest)
+
 enable_testing()
+add_subdirectory(piece_table)
+add_subdirectory(myapp)
 
-SET(SOURCE source/piece_table.cpp)
 
 
-
-add_executable("${PROJECT_NAME}" main.cpp ${SOURCE})
-add_executable("unittest_${PROJECT_NAME}" testmain.cpp ${SOURCE})
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
-target_link_libraries("unittest_${PROJECT_NAME}" gtest_main)
-add_test(NAME "unittest_${PROJECT_NAME}" COMMAND "unittest_${PROJECT_NAME}")
