@@ -9,5 +9,6 @@
         "hash_map": "cpp",
         "hash_set": "cpp",
         "slist": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "${workspaceRoot}/src"
 }
