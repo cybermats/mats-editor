@@ -3,6 +3,9 @@
 #include <list>
 #include <string>
 #include <ostream>
+#include <memory>
+
+class piece_table_impl;
 
 class piece_table {
 public:
@@ -17,27 +20,12 @@ public:
   // ItemAt
   short item_at(size_t);
 
-  size_t size() const {
-    return _size;
-  }
+  size_t size();
 
   friend std::ostream& operator<< (std::ostream& stream, const piece_table& table);
-
 private:
-  struct piece {
-    piece() {}
-    piece(bool add, size_t offset, size_t length)
-        : add(add), offset(offset), length(length) {}
-
-    bool add;
-    size_t offset;
-    size_t length;
-  };
-
   const std::string _original;
-  std::string _add;
-  std::list<piece> _pieces;
-  size_t _size;
+    const std::shared_ptr<piece_table_impl> _impl;
 };
 
 piece_table piece_table_from_file(const std::string& filename);

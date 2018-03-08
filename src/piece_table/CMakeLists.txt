@@ -1,7 +1,9 @@
 project(piece_table_lib VERSION 0.1 LANGUAGES CXX)
 
 add_library("${PROJECT_NAME}"
-  src/piece_table.cpp)
+        src/piece_table.cpp
+        src/piece_table_impl.cpp
+        )
 
 target_include_directories("${PROJECT_NAME}" PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
