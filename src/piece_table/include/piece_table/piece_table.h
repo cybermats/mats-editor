@@ -1,6 +1,4 @@
 #pragma once
-#include "piece_table_exception.h"
-#include <list>
 #include <string>
 #include <ostream>
 #include <memory>
@@ -27,5 +25,3 @@ private:
   const std::string _original;
     const std::shared_ptr<piece_table_impl> _impl;
 };
-
-piece_table piece_table_from_file(const std::string& filename);
