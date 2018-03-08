@@ -245,3 +245,30 @@ TEST(TestAdvancedFunctionality, ManyInsertsFromSetAfter) {
   EXPECT_EQ(pt.item_at(4), -1);
 }
 
+TEST(TestSize, Empty) {
+  piece_table pt;
+  EXPECT_EQ(pt.size(), 0);
+}
+
+TEST(TestSize, Set) {
+  piece_table pt("abc");
+  EXPECT_EQ(pt.size(), 3);
+}
+
+TEST(TestSize, EmptyInsert) {
+  piece_table pt;
+  pt.insert(0, 'a');
+  EXPECT_EQ(pt.size(), 1);
+}
+
+TEST(TestSize, SetInsert) {
+  piece_table pt("abc");
+  pt.insert(0, 'x');
+  EXPECT_EQ(pt.size(), 4);
+}
+
+TEST(TestSize, SetDelete) {
+  piece_table pt("abc");
+  pt.erase(0);
+  EXPECT_EQ(pt.size(), 2);
+}

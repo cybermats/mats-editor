@@ -1,4 +1,5 @@
 #pragma once
+#include "piece_table_exception.h"
 #include <list>
 #include <string>
 
@@ -7,7 +8,7 @@ public:
   // Empty
   piece_table();
   // Sequence
-  piece_table(const std::string value);
+  piece_table(const std::string& value);
   // Insert
   void insert(size_t position, unsigned char item);
   // Delete
@@ -15,6 +16,9 @@ public:
   // ItemAt
   short item_at(size_t);
 
+  size_t size() const {
+    return _size;
+  }
 private:
   struct piece {
     piece() {}
@@ -29,4 +33,5 @@ private:
   const std::string _original;
   std::string _add;
   std::list<piece> _pieces;
+  size_t _size;
 };

@@ -1,12 +1,15 @@
 #include "piece_table/piece_table.h"
 #include <stdexcept>
+#include <string>
 #include <vector>
 
+
 // Empty
-piece_table::piece_table() : _original(), _add(), _pieces() {}
+piece_table::piece_table() : _original(), _add(), _pieces(), _size(0) {}
 // Sequence
-piece_table::piece_table(const std::string value)
-    : _original(value), _add(), _pieces({{false, 0, value.size()}}) {}
+piece_table::piece_table(const std::string &value)
+    : _original(value), _add(), _pieces({{false, 0, value.size()}}),
+      _size(value.size()) {}
 // Insert
 void piece_table::insert(size_t position, unsigned char item) {
   auto added = _pieces.end();
@@ -50,6 +53,7 @@ void piece_table::insert(size_t position, unsigned char item) {
       }
     }
   }
+  ++_size;
 }
 // Delete
 void piece_table::erase(size_t position) {
@@ -66,6 +70,7 @@ void piece_table::erase(size_t position) {
         it->offset += (position + 1);
         it->length -= (position + 1);
       }
+      --_size;
       return;
     }
     position -= it->length;
