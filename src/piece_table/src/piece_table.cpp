@@ -1,4 +1,5 @@
 #include "piece_table/piece_table.h"
+#include <fstream>
 #include <stdexcept>
 #include <string>
 #include <vector>
@@ -91,4 +92,33 @@ short piece_table::item_at(size_t position) {
     position -= it.length;
   }
   return -1;
+}
+
+std::ostream &operator<<(std::ostream &stream, const piece_table &table) {
+  for (auto p : table._pieces) {
+    const char *buffer;
+    if (p.add) {
+      buffer = &table._add[p.offset];
+    } else {
+      buffer = &table._original[p.offset];
+    }
+    size_t len = p.length;
+    stream.write(buffer, len);
+  }
+  return stream;
+}
+
+piece_table piece_table_from_file(const std::string& filename) {
+  std::ifstream in(filename, std::ios::in | std::ios::binary);
+  if (in) {
+    std::string contents;
+    in.seekg(0, std::ios::end);
+    auto size = in.tellg();
+    contents.resize(size);
+    in.seekg(0, std::ios::beg);
+    in.read(&contents[0], contents.size());
+    in.close();
+    return piece_table(contents);
+  }
+  throw piece_table_exception("Unable to open file.");
 }
