@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 #include <ostream>
 #include <memory>
@@ -7,25 +8,31 @@ class piece_table_impl;
 
 class piece_table {
 public:
-  // Empty
-  piece_table();
-  // Sequence
-  explicit piece_table(const std::string& value);
-  // Insert
-  void insert(size_t position, unsigned char item);
-  // Delete
-  void erase(size_t position);
-  // ItemAt
-  short item_at(size_t);
+    // Empty
+    piece_table();
 
-  size_t size();
+    // Sequence
+    explicit piece_table(const std::string &value);
 
-  friend std::ostream& operator<< (std::ostream& stream, const piece_table& table);
+    // Insert
+    void insert(size_t position, unsigned char item);
+
+    // Delete
+    void erase(size_t position);
+
+    // ItemAt
+    short item_at(size_t);
+
+    size_t size();
+
+    friend std::ostream &operator<<(std::ostream &stream, const piece_table &table);
+
 private:
-  const std::string _original;
+    const std::string _original;
     const std::shared_ptr<piece_table_impl> _impl;
 };
 
 
-piece_table make_from_string(const std::string& value);
-piece_table make_from_file(const char* filename);
+piece_table make_from_string(const std::string &value);
+
+piece_table make_from_file(const char *filename);

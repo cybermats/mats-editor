@@ -1,6 +1,5 @@
 #include "piece_table/piece_table.h"
 #include "gtest/gtest.h"
-#include <iostream>
 
 TEST(TestConstructors, EmptyConstructor) { EXPECT_NO_THROW(piece_table pt); }
 

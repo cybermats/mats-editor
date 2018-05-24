@@ -8,9 +8,10 @@
 
 
 // Sequence
-piece_table_impl::piece_table_impl(const char* buffer, size_t length)
+piece_table_impl::piece_table_impl(const char *buffer, size_t length)
         : _original(buffer), _add(), _pieces({{false, 0, length}}),
           _size(length) {}
+
 // Insert
 void piece_table_impl::insert(size_t position, unsigned char item) {
   auto added = _pieces.end();
@@ -56,6 +57,7 @@ void piece_table_impl::insert(size_t position, unsigned char item) {
   }
   ++_size;
 }
+
 // Delete
 void piece_table_impl::erase(size_t position) {
   for (auto it = _pieces.begin(); it != _pieces.end(); ++it) {
@@ -79,6 +81,7 @@ void piece_table_impl::erase(size_t position) {
   throw std::out_of_range(
           "Tries to delete outside of the size of the piece_table.");
 }
+
 // ItemAt
 short piece_table_impl::item_at(size_t position) {
   for (auto it : _pieces) {

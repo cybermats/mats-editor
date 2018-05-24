@@ -29,10 +29,12 @@ file_piece_table::file_piece_table(const char *filename) {
 void file_piece_table::insert(size_t position, unsigned char item) {
   _impl->insert(position, item);
 }
+
 // Delete
 void file_piece_table::erase(size_t position) {
   _impl->erase(position);
 }
+
 // ItemAt
 short file_piece_table::item_at(size_t position) {
   return _impl->item_at(position);

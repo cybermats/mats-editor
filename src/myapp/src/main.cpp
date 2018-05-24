@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-  const char* filename = "LICENSE";
+  const char *filename = "LICENSE";
 
   large_file_piece_table pt(filename);
   std::cout << pt << std::endl;

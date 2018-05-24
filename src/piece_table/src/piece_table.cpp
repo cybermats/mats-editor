@@ -1,26 +1,26 @@
 #include "piece_table/piece_table.h"
-#include "piece_table/piece_table_exception.h"
 #include "piece_table/impl/piece_table_impl.h"
 #include <fstream>
 #include <vector>
 
 
-
-
-
 // Empty
 piece_table::piece_table() : _original(), _impl(new piece_table_impl(nullptr, 0)) {}
+
 // Sequence
 piece_table::piece_table(const std::string &value)
-    : _original(value), _impl(new piece_table_impl(_original.c_str(), _original.size())){}
+        : _original(value), _impl(new piece_table_impl(_original.c_str(), _original.size())) {}
+
 // Insert
 void piece_table::insert(size_t position, unsigned char item) {
   _impl->insert(position, item);
 }
+
 // Delete
 void piece_table::erase(size_t position) {
   _impl->erase(position);
 }
+
 // ItemAt
 short piece_table::item_at(size_t position) {
   return _impl->item_at(position);
