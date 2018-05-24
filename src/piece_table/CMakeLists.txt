@@ -14,7 +14,7 @@ target_include_directories("${PROJECT_NAME}" PUBLIC
 export(TARGETS "${PROJECT_NAME}" FILE piece_table.cmake)
 
 add_executable("test_${PROJECT_NAME}"
-        test/testmain.cpp)
+        test/testmain.cpp test/testrows.cpp)
 
 target_link_libraries("test_${PROJECT_NAME}"
         "${PROJECT_NAME}" ${Boost_LIBRARIES} gtest_main)

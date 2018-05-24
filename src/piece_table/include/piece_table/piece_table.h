@@ -3,6 +3,7 @@
 #include <string>
 #include <ostream>
 #include <memory>
+#include "pt_types.h"
 
 class piece_table_impl;
 
@@ -25,7 +26,11 @@ public:
 
     size_t size() const;
 
-    size_t size();
+    size_t row_count() const;
+
+    size_t row_position(size_t row) const;
+
+    ending_t ending_type() const;
 
     friend std::ostream &operator<<(std::ostream &stream, const piece_table &table);
 

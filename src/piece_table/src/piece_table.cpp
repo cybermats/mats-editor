@@ -34,3 +34,15 @@ std::ostream &operator<<(std::ostream &stream, const piece_table &table) {
 size_t piece_table::size() const {
   return _impl->size();
 }
+
+size_t piece_table::row_count() const {
+  return _impl->row_count();
+}
+
+size_t piece_table::row_position(size_t row) const {
+  return _impl->row_position(row);
+}
+
+ending_t piece_table::ending_type() const {
+  return _impl->ending_type();
+}

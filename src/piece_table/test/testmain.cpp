@@ -271,3 +271,4 @@ TEST(TestSize, SetDelete) {
   pt.erase(0);
   EXPECT_EQ(pt.size(), 2);
 }
+
