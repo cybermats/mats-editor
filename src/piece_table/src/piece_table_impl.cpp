@@ -83,7 +83,7 @@ void piece_table_impl::erase(size_t position) {
 }
 
 // ItemAt
-short piece_table_impl::item_at(size_t position) {
+short piece_table_impl::item_at(size_t position) const {
   for (auto it : _pieces) {
     if (position < it.length) {
       if (it.add) {

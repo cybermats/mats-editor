@@ -20,7 +20,7 @@ public:
     void erase(size_t position);
 
     // ItemAt
-    short item_at(size_t);
+    short item_at(size_t) const;
 
     size_t size() const {
       return _size;

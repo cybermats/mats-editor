@@ -22,7 +22,7 @@ void piece_table::erase(size_t position) {
 }
 
 // ItemAt
-short piece_table::item_at(size_t position) {
+short piece_table::item_at(size_t position) const {
   return _impl->item_at(position);
 }
 
@@ -31,6 +31,6 @@ std::ostream &operator<<(std::ostream &stream, const piece_table &table) {
   return stream;
 }
 
-size_t piece_table::size() {
+size_t piece_table::size() const {
   return _impl->size();
 }
