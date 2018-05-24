@@ -10,7 +10,7 @@ public:
   // Empty
   piece_table();
   // Sequence
-  piece_table(const std::string& value);
+  explicit piece_table(const std::string& value);
   // Insert
   void insert(size_t position, unsigned char item);
   // Delete
@@ -25,3 +25,7 @@ private:
   const std::string _original;
     const std::shared_ptr<piece_table_impl> _impl;
 };
+
+
+piece_table make_from_string(const std::string& value);
+piece_table make_from_file(const char* filename);

@@ -5,6 +5,9 @@
 #include <vector>
 
 
+
+
+
 // Empty
 piece_table::piece_table() : _original(), _impl(new piece_table_impl(nullptr, 0)) {}
 // Sequence

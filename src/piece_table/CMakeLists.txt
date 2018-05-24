@@ -1,9 +1,5 @@
 project(piece_table_lib VERSION 0.1 LANGUAGES CXX)
 
-find_package(Boost 1.66 REQUIRED COMPONENTS
-        filesystem)
-
-
 add_library("${PROJECT_NAME}"
         src/piece_table.cpp
         src/piece_table_impl.cpp

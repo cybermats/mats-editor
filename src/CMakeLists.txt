@@ -24,14 +24,21 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
                  ${CMAKE_BINARY_DIR}/googletest-build
                  EXCLUDE_FROM_ALL)
 
-
 project(piece_table VERSION 0.0.0)
+
+SET(BOOST_INCLUDEDIR "/usr/local/include")
+SET(BOOST_LIBRARYDIR "/usr/local/lib")
+find_package(Boost 1.58 REQUIRED COMPONENTS
+        filesystem)
+
+
 
 include(CTest)
 
 enable_testing()
 add_subdirectory(piece_table)
 add_subdirectory(myapp)
+add_subdirectory(winapp)
 
 
 

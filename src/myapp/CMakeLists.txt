@@ -1,5 +1,4 @@
-find_package(Boost 1.66 REQUIRED COMPONENTS
-        filesystem)
+project(piece_table_app VERSION 0.1 LANGUAGES CXX)
 
 add_executable("app"
   src/main.cpp)
